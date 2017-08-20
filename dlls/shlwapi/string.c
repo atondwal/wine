@@ -338,6 +338,28 @@ LPWSTR WINAPI StrChrNW(LPCWSTR lpszStr, WCHAR ch, UINT cchMax)
 }
 
 /*************************************************************************
+ * StrChrNIW	[SHLWAPI.@]
+ * 
+ * See StrChrNW. Case-insensitive.
+ */
+LPWSTR WINAPI StrChrNIW(LPCWSTR lpszStr, WCHAR ch, UINT cchMax)
+{
+  TRACE("(%s(%i),%i)\n", debugstr_wn(lpszStr,cchMax), cchMax, ch);
+
+  if (lpszStr)
+  {
+    while (*lpszStr && cchMax-- > 0)
+    {
+      if (toUpper(*lpszStr) == ch)
+        return (LPWSTR)lpszStr;
+      lpszStr++;
+    }
+  }
+  return NULL;
+}
+
+
+/*************************************************************************
  * StrCmpIW	[SHLWAPI.@]
  *
  * Compare two strings, ignoring case.
