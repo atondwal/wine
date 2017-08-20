@@ -94,7 +94,7 @@
 @ stdcall StrChrA(str long) shlwapi.StrChrA
 @ stdcall StrChrIA(str long) shlwapi.StrChrIA
 @ stdcall StrChrIW(wstr long) shlwapi.StrChrIW
-@ stub StrChrNIW
+@ stdcall StrChrNIW(wstr long long) shlwapi.StrChrNIW
 @ stdcall StrChrNW(wstr long long) shlwapi.StrChrNW
 @ stdcall StrChrW(wstr long) shlwapi.StrChrW
 @ stdcall StrCmpCA(str str) shlwapi.StrCmpCA
